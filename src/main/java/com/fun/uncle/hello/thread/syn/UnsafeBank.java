@@ -69,22 +69,25 @@ class Drawing implements Runnable{
 
     @Override
     public void run() {
-        // 判断卡里面余额是否足够
-        if (account.getMoney() - drawingMoney <= 0) {
-            System.out.println(Thread.currentThread().getName() + "账户余额不足，不能取钱");
-            return;
+        synchronized (Account.class) {
+            // 判断卡里面余额是否足够
+            if (account.getMoney() - drawingMoney <= 0) {
+                System.out.println(Thread.currentThread().getName() + "账户余额不足，不能取钱");
+                return;
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            // 卡内余额 = 余额 - 你去的钱
+            account.setMoney(account.getMoney() - drawingMoney);
+            // 手上的钱
+            nonMoney = nonMoney + drawingMoney;
+            System.out.println(account.getName() + "账户余额为" + account.getMoney());
+            System.out.println(Thread.currentThread().getName() + "拿到手上有" + nonMoney);
+
         }
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        // 卡内余额 = 余额 - 你去的钱
-        account.setMoney(account.getMoney() - drawingMoney);
-        // 手上的钱
-        nonMoney = nonMoney + drawingMoney;
-        System.out.println(account.getName() + "账户余额为" + account.getMoney());
-        System.out.println(Thread.currentThread().getName() + "拿到手上有" + nonMoney);
     }
 }
