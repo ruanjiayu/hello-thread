@@ -10,14 +10,15 @@ public class TestPC {
 
     public static void main(String[] args) {
         SyncContainer syncContainer = new SyncContainer();
-        new Producer(syncContainer).start();
+        new Producer(syncContainer, "小红").start();
+        new Producer(syncContainer, "小橙").start();
+        new Producer(syncContainer, "小黄").start();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         new Consumer(syncContainer).start();
-
     }
 }
 
@@ -27,8 +28,9 @@ public class TestPC {
 class Producer extends Thread{
     SyncContainer container;
 
-    public Producer(SyncContainer container) {
+    public Producer(SyncContainer container, String name) {
         this.container = container;
+        super.setName(name);
     }
 
     /**
@@ -36,14 +38,14 @@ class Producer extends Thread{
      */
     @Override
     public void run() {
-        for (int i = 1; i < 40; i++) {
+        for (int i = 1; i < 10; i++) {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("生产了第" + i + "只鸡");
             container.push(new Chicken(i));
+//            System.out.println(this.getName() + "生产了第" + i + "只鸡");
         }
     }
 }
@@ -60,7 +62,7 @@ class Consumer extends Thread{
 
     @Override
     public void run() {
-        for (int i = 1; i < 40; i++) {
+        for (int i = 1; i < 20; i++) {
             try {
                 Thread.sleep(300);
             } catch (InterruptedException e) {
@@ -95,15 +97,21 @@ class SyncContainer{
 
     /**生产者放入产品*/
     public synchronized void push(Chicken chicken) {
+        System.out.println(Thread.currentThread().getName() + "【开启】" + count);
         if (count == chickens.length) {
             //通知消费者消费。生产者等待
             try {
+                System.out.println(Thread.currentThread().getName() + "【停止】");
                 this.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-
+        System.out.println(Thread.currentThread().getName() + "【我要开始生产了】" + count);
+        // 关键的一步，注意wait一旦被激活是在原来的位置上继续下去运行，而不是重新开始运行线程
+        if (count == chickens.length) {
+            return;
+        }
         //如果没有满，那么继续丢入产品
         chickens[count] = chicken;
         count++;
@@ -125,7 +133,13 @@ class SyncContainer{
             }
         }
 
+        System.out.println("目前的数量" + count);
         count--;
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Chicken chicken = chickens[count];
         // 通知生产者生产
         this.notifyAll();
