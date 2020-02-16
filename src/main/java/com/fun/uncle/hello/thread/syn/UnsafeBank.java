@@ -69,7 +69,7 @@ class Drawing implements Runnable{
 
     @Override
     public void run() {
-        synchronized (Account.class) {
+        synchronized (account) {
             // 判断卡里面余额是否足够
             if (account.getMoney() - drawingMoney <= 0) {
                 System.out.println(Thread.currentThread().getName() + "账户余额不足，不能取钱");
