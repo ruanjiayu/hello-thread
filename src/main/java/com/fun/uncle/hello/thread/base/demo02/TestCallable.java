@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.demo02;
+package com.fun.uncle.hello.thread.base.demo02;
 
 import org.apache.commons.io.FileUtils;
 

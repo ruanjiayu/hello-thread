@@ -1,18 +1,13 @@
-package com.fun.uncle.hello.thread.demo03;
-
-import com.fun.uncle.hello.thread.demo01.TestThread04;
+package com.fun.uncle.hello.thread.base.demo01;
 
 /**
- * @Description: 模拟网络延迟: 放大问题的发生性。记住每个对象都有一个锁，sleep不会释放锁
+ * @Description: 例二:多个线程同时操作同一个对象，例如购买货车票。发现问题:多个线程操作同一个资源的情况下，线程不安全
  * @Author: Xian
- * @CreateDate: 2020/2/16  10:10
+ * @CreateDate: 2020/2/15  21:59
  * @Version: 0.0.1-SNAPSHOT
  */
-public class TestSleep implements Runnable {
-
-    /**
-     * 票数
-     */
+public class TestThread04 implements Runnable{
+    /**票数*/
     private int ticketNums = 10;
 
     @Override

@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.pc;
+package com.fun.uncle.hello.thread.base.pc;
 
 /**
  * @Description: 实现生产者与消费者模型，采用了缓存区方法来进行解决:管程法

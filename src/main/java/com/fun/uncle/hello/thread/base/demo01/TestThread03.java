@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.demo01;
+package com.fun.uncle.hello.thread.base.demo01;
 
 /**
  * @Description: 推荐使用，灵活方便，方便同一个对象被多个线程使用。实现Runnable接口。

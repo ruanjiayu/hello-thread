@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.syn;
+package com.fun.uncle.hello.thread.base.syn;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 

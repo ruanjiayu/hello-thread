@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.demo;
+package com.fun.uncle.hello.thread.base.demo;
 
 /**
  * @Description:

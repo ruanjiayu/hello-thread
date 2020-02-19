@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.demo01;
+package com.fun.uncle.hello.thread.base.demo01;
 
 /**
  * @Description: 创建线程方式一： 集成thread类, 重写run(), 调用start来开启线程。线程开启不一定立刻执行而是由CPU控制。不建议使用,因为java的OOP单继承原则

@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.lock;
+package com.fun.uncle.hello.thread.base.lock;
 
 import java.util.concurrent.locks.ReentrantLock;
 

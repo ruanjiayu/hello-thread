@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.syn;
+package com.fun.uncle.hello.thread.base.syn;
 
 /**
  * @Description: 不安全的买票。模拟网络延迟: 放大问题的发生性。记住每个对象都有一个锁，sleep不会释放锁

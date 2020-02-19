@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.demo03;
+package com.fun.uncle.hello.thread.base.demo03;
 
 /**
  * @Description: 设置线程的优先级。new Thread().setPriority()。范围是1~10.有可能优先级高的不会优先执行，看CPU调度。

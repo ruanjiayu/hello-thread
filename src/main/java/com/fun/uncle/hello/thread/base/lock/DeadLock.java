@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.lock;
+package com.fun.uncle.hello.thread.base.lock;
 
 /**
  * @Description: 死锁:多个线程抱着对象需要的资源，形成僵持

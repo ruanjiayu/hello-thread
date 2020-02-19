@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.syn;
+package com.fun.uncle.hello.thread.base.syn;
 
 /**
  * @Description: 不安全的取钱。

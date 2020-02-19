@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.demo03;
+package com.fun.uncle.hello.thread.base.demo03;
 
 /**
  * @Description: join合并线程，其他线程阻塞，待此线程执行完成后，再执行其他线程。可以想象成插队

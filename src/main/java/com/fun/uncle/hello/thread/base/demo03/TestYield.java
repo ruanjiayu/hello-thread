@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.demo03;
+package com.fun.uncle.hello.thread.base.demo03;
 
 /**
  * @Description: 测试礼让线程

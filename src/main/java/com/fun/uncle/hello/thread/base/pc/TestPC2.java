@@ -1,4 +1,4 @@
-package com.fun.uncle.hello.thread.pc;
+package com.fun.uncle.hello.thread.base.pc;
 
 /**
  * @Description: 测试生产者消费者问题2:信号灯法，标志位解决
