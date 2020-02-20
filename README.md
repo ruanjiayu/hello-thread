@@ -10,5 +10,5 @@ thread的相关学习
 6. Synchronized 适合锁少量的代码同步问题,Lock适合锁大量的同步代码块。
 
 ::: tip
-this is tip
+this tip
 :::
