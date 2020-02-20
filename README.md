@@ -9,6 +9,6 @@ thread的相关学习
 5. Synchronized 可重入锁，不可以中断的，非公平；Lock，可重入锁，可以判断锁，非公平的(可以自己设置)。
 6. Synchronized 适合锁少量的代码同步问题,Lock适合锁大量的同步代码块。
 
-::: tip 
+::: tip
 this is tip
 :::
