@@ -9,8 +9,6 @@ thread的相关学习
 5. Synchronized 可重入锁，不可以中断的，非公平；Lock，可重入锁，可以判断锁，非公平的(可以自己设置)。
 6. Synchronized 适合锁少量的代码同步问题,Lock适合锁大量的同步代码块。
 
-::: tip 常用的辅助类
-1. CountDownLatch来进行计数的递减。等到数目一定的线程执行完currentDown后，await()方法才会释放下去。
-2. CyclicBarrier来进行计数的累计，直到打破屏障，再来进行后去的操作
-3. Semaphore来进行限流操作，需要许可证才能进行操作
+::: tip 
+this is tip
 :::
