@@ -11,6 +11,7 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class TestCyclicBarrier {
     public static void main(String[] args) {
+        // 需要7个线程运行到await出，才能打破屏障，执行后面的语句
         CyclicBarrier cyclicBarrier = new CyclicBarrier(7, () -> {
             System.out.println("【已经集合完成7颗龙珠，召唤神龙!】");
         });
@@ -22,6 +23,7 @@ public class TestCyclicBarrier {
                 System.out.println(Thread.currentThread().getName() + "收集" + temp + "龙珠");
                 try {
                     cyclicBarrier.await();
+                    // 需要打破屏障才能执行
                     System.out.println("【我在方法里面】");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
