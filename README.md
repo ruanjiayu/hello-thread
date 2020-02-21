@@ -14,3 +14,4 @@ thread的相关学习
 2. CyclicBarrier来进行计数的累计，直到打破屏障，再来进行后去的操作
 3. Semaphore来进行限流操作，需要许可证才能进行操作
 
+> ArrayBlockingQueue
