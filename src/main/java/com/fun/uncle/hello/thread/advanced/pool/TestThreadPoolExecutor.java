@@ -20,9 +20,15 @@ import java.util.concurrent.TimeUnit;
  */
 public class TestThreadPoolExecutor {
     public static void main(String[] args) {
+        /**
+         * 如何设置池的最大的线程数
+         * 分为CPU型和IO型
+         * CPU：Runtime.getRuntime().availableProcessors().以当时的计算机来进行动态核心数来进行设置
+         * IO型:我们一般判断最大的IO数 * 2
+         */
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
                 2, //核心
-                5, //最大可以执行线程数
+                Runtime.getRuntime().availableProcessors(), //最大可以执行线程数
                 10, //等待时间
                 TimeUnit.SECONDS, //时间单位
                 new LinkedBlockingDeque<>(3),  //超出最大线程数目，可以等待的线程数目
