@@ -35,10 +35,7 @@ public class TestStream {
         list.stream()
                 .filter((u) -> u.getId() % 2 == 0)
                 .filter((u) -> u.getAge() > 23)
-                .map((user)->{
-                    user.setName(user.getName().toUpperCase());
-                    return user;
-                })
+                .map((user)->{ user.setName(user.getName().toUpperCase()); return user; })
                 .sorted((u1, u2)-> u2.getName().compareTo(u1.getName()))
                 .limit(1)
                 .forEach(System.out::println);
