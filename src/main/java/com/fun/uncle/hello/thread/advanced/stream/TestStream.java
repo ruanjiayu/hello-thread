@@ -1,8 +1,6 @@
 package com.fun.uncle.hello.thread.advanced.stream;
 
-import com.sun.deploy.util.ArrayUtil;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -36,6 +34,7 @@ public class TestStream {
                 .filter((u) -> u.getId() % 2 == 0)
                 .filter((u) -> u.getAge() > 23)
                 .map((user)->{ user.setName(user.getName().toUpperCase()); return user; })
+//                .sorted(Comparator.comparing(User::getName))
                 .sorted((u1, u2)-> u2.getName().compareTo(u1.getName()))
                 .limit(1)
                 .forEach(System.out::println);
