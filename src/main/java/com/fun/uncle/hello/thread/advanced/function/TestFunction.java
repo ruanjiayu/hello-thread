@@ -3,7 +3,7 @@ package com.fun.uncle.hello.thread.advanced.function;
 import java.util.function.Function;
 
 /**
- * @Description: Function 函数型接口
+ * @Description: Function 功能型接口
  * @Author: Xian
  * @CreateDate: 2020/2/22  16:42
  * @Version: 0.0.1-SNAPSHOT
