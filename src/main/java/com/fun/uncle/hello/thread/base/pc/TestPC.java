@@ -98,7 +98,7 @@ class SyncContainer{
     /**生产者放入产品*/
     public synchronized void push(Chicken chicken) {
         System.out.println(Thread.currentThread().getName() + "【开启】" + count);
-        if (count == chickens.length) {
+        while (count == chickens.length) {
             //通知消费者消费。生产者等待
             try {
                 System.out.println(Thread.currentThread().getName() + "【停止】");
@@ -109,9 +109,6 @@ class SyncContainer{
         }
         System.out.println(Thread.currentThread().getName() + "【我要开始生产了】" + count);
         // 关键的一步，注意wait一旦被激活是在原来的位置上继续下去运行，而不是重新开始运行线程
-        if (count == chickens.length) {
-            return;
-        }
         //如果没有满，那么继续丢入产品
         chickens[count] = chicken;
         count++;
@@ -124,7 +121,7 @@ class SyncContainer{
     /**消费者消费产品*/
     public synchronized Chicken pop() {
         // 判断能否消费
-        if (count == 0) {
+        while (count == 0) {
             //等待生产者生产，消费者消费
             try {
                 this.wait();
