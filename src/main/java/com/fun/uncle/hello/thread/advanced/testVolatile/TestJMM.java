@@ -21,7 +21,7 @@ public class TestJMM {
 
     public static void main(String[] args) {
 
-        // 线程1 对于主内存的变化不知道
+        // 线程1 对于主内存的变化不知道,因为使用了类似匿名内部类，相当于重新写了一个属性
         new Thread(()->{
             while (num == 0) {
 
