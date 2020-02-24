@@ -90,7 +90,7 @@ class TV {
      * @param voice
      */
     public synchronized void play(String voice) {
-        if (!flag) {
+        while (!flag) {
             try {
                 this.wait();
             } catch (InterruptedException e) {
@@ -108,7 +108,7 @@ class TV {
      * 观众观看
      */
     public synchronized void watch() {
-        if (flag) {
+        while (flag) {
             try {
                 this.wait();
             } catch (InterruptedException e) {
