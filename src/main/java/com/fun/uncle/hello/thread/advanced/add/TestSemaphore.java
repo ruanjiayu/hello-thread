@@ -19,8 +19,9 @@ public class TestSemaphore {
                 try {
                     semaphore.acquire();
                     System.out.println(Thread.currentThread().getName() + "抢到车位");
-                    TimeUnit.SECONDS.sleep(2);
+                    TimeUnit.SECONDS.sleep(1);
                     System.out.println(Thread.currentThread().getName() + "释放车位");
+                    TimeUnit.SECONDS.sleep(1);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
