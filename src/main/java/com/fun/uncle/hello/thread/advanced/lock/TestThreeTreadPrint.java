@@ -23,9 +23,9 @@ public class TestThreeTreadPrint {
 
 
     public void sub1() {
+        lock.lock();
         try {
-            lock.lock();//开启锁
-            while (num != 1){//这里jdk源码里推荐用while，因为有可能出现虚假唤醒，所以要再次确认
+            while (num != 1){
                 try {
                     condition1.await();//条件1线程等待，并释放锁
                 } catch (InterruptedException e) {
@@ -47,9 +47,9 @@ public class TestThreeTreadPrint {
 
 
     public void sub2() {
+        lock.lock();
         try {
-            lock.lock();//开启锁
-            while (num !=2) {//这里jdk源码里推荐用while，因为有可能出现虚假唤醒，所以要再次确认
+            while (num !=2) {
                 try {
                     condition2.await();//条件2线程等待，并释放锁
                 } catch (InterruptedException e) {
@@ -70,9 +70,9 @@ public class TestThreeTreadPrint {
     }
 
     public void sub3() {
+        lock.lock();
         try {
-            lock.lock();//开启锁
-            while (num !=3) {//这里jdk源码里推荐用while，因为有可能出现虚假唤醒，所以要再次确认
+            while (num !=3) {
                 try {
                     condition3.await();//条件3线程等待，并释放锁
                 } catch (InterruptedException e) {
